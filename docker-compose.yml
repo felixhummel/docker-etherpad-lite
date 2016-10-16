@@ -4,3 +4,5 @@ services:
     image: etherpad-lite
     ports:
       - '9001:9001'
+    volumes:
+      - ./settings.json:/home/app/etherpad-lite/settings.json:ro
