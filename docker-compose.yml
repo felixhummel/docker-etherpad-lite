@@ -1,0 +1,6 @@
+version: '2'
+services:
+  etherpad:
+    image: etherpad-lite
+    ports:
+      - '9001:9001'
