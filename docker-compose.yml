@@ -6,3 +6,8 @@ services:
       - '9001:9001'
     volumes:
       - ./settings.json:/home/app/etherpad-lite/settings.json:ro
+  postgres:
+    image: postgres
+    volumes:
+      - ./postgres_init/1_create.sql:/docker-entrypoint-initdb.d/1_create.sql
+      - ./postgres_data/:/var/lib/postgresql/data
