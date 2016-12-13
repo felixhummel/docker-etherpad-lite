@@ -5,7 +5,7 @@ remaining=$TIMEOUT
 
 echo Waiting for postgres to come up.
 
-while !pg_isready -q -hpostgres -Upad -dpad; do
+until pg_isready -q -hpostgres -Upad -dpad; do
   echo $remaining
   if [[ $remaining == 0 ]]; then
     echo "timeout"
