@@ -1,9 +1,16 @@
 version: '2'
 services:
+  nginx:
+    image: nginx
+    ports:
+      - 9001:9001
+    links:
+      - etherpad
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
   etherpad:
     image: etherpad-lite
-    ports:
-      - '9001:9001'
+    build: .
     volumes:
       - ./settings.json:/home/app/etherpad-lite/settings.json:ro
   postgres:
