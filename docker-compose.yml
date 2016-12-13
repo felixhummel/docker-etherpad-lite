@@ -3,7 +3,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - 9001:9001
+      - 127.0.0.1:9001:9001
     links:
       - etherpad
     volumes:
