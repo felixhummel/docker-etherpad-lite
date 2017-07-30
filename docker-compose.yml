@@ -10,7 +10,7 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     restart: always
   etherpad:
-    image: etherpad-lite:01d23b1f
+    image: etherpad-lite:1.6.1
     build: .
     volumes:
       - ./settings.json:/home/app/etherpad-lite/settings.json:ro
