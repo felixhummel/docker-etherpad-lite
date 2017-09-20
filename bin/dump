@@ -4,5 +4,5 @@ set -euo pipefail
 here="$(readlink -m $(dirname $0))"
 
 cd $here/..
-docker-compose exec postgres pg_dump --format=c --username=postgres pad
+docker-compose exec -T postgres pg_dump --format=c --username=postgres pad
 
