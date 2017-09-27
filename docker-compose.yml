@@ -9,7 +9,7 @@ services:
       - ./settings.json:/home/app/etherpad-lite/settings.json:ro
     restart: always
   postgres:
-    image: postgres
+    image: postgres:9.5
     volumes:
       - ./postgres_init/1_create.sql:/docker-entrypoint-initdb.d/1_create.sql
       - ./postgres_data/:/var/lib/postgresql/data
