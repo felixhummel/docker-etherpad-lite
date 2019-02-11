@@ -12,5 +12,7 @@ services:
     image: postgres:9.5
     volumes:
       - ./postgres_init/1_create.sql:/docker-entrypoint-initdb.d/1_create.sql
-      - ./postgres_data/:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     restart: always
+volumes:
+  postgres_data:
